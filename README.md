@@ -1,2 +1,2 @@
-# oop_homework
-OOP homework
+# OOP Homework
+Inheritance, encapsulation, polymorphism
