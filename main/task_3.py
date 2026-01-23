@@ -83,7 +83,7 @@ class Reviewer(Mentor):
         return f"Имя: {self.name}\nФамилия: {self.surname}"
 
 
-#  Testing
+#  Testing (Task 4)
 
 student1 = Student("Anna", "Ivanova", "F")
 student2 = Student("Max", "Petrov", "M")
