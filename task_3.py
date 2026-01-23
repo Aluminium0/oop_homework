@@ -81,3 +81,44 @@ class Reviewer(Mentor):
 
     def __str__(self):
         return f"Имя: {self.name}\nФамилия: {self.surname}"
+
+
+#  Testing
+
+student1 = Student("Anna", "Ivanova", "F")
+student2 = Student("Max", "Petrov", "M")
+
+lecturer1 = Lecturer("Ivan", "Ivanov")
+lecturer2 = Lecturer("Sergey", "Smirnov")
+
+reviewer1 = Reviewer("Petr", "Petrov")
+reviewer2 = Reviewer("Olga", "Sidorova")
+
+student1.courses_in_progress += ["Python"]
+student2.courses_in_progress += ["Python"]
+
+lecturer1.courses_attached += ["Python"]
+lecturer2.courses_attached += ["Python"]
+
+reviewer1.courses_attached += ["Python"]
+reviewer2.courses_attached += ["Python"]
+
+reviewer1.rate_hw(student1, "Python", 9)
+reviewer1.rate_hw(student2, "Python", 8)
+reviewer2.rate_hw(student1, "Python", 10)
+reviewer2.rate_hw(student2, "Python", 9)
+
+student1.rate_lecture(lecturer1, "Python", 8)
+student1.rate_lecture(lecturer2, "Python", 9)
+student2.rate_lecture(lecturer1, "Python", 9)
+student2.rate_lecture(lecturer2, "Python", 10)
+
+print(student1)
+print(student2)
+print(lecturer1)
+print(lecturer2)
+print(reviewer1)
+print(reviewer2)
+
+print(average_hw_grade([student1, student2], "Python"))
+print(average_lecture_grade([lecturer1, lecturer2], "Python"))
