@@ -66,3 +66,39 @@ shop_list = get_shop_list_by_dishes(
 )
 
 print(shop_list)
+
+
+# Task 3
+
+files = ["1.txt", "2.txt", "3.txt"]
+
+files_info = []
+
+# Read files
+for filename in files:
+    file = open(filename, encoding="utf-8")
+    lines = file.readlines()
+    file.close()
+
+    files_info.append([filename, len(lines), lines])
+
+# Sort by number
+for i in range(len(files_info)):
+    for j in range(i + 1, len(files_info)):
+        if files_info[i][1] > files_info[j][1]:
+            files_info[i], files_info[j] = files_info[j], files_info[i]
+
+# Write result file
+result = open("result.txt", "w", encoding="utf-8")
+
+for item in files_info:
+    result.write(item[0] + "\n")
+    result.write(str(item[1]) + "\n")
+
+    for line in item[2]:
+        result.write(line)
+
+    result.write("\n")
+
+result.close()
+
